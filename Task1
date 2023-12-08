@@ -1,0 +1,317 @@
+import inquirer from "inquirer";
+
+
+//                                            Task One
+
+
+
+// // let create some dummy data 
+// let categories = [[1,2,3],["Fruits", "Vegetables", "Groceries"]]
+// let fruitsList=[["Apple", "Mango"],[250, 100]];
+// let vegetablesList=[["Potato", "Onion"],[130, 120]];
+// let groceriesList=[["Sugar", "Rice"],[200, 300]];
+// let cardTypes = ["EasyPaisa", "JazzCash"]
+
+// // Lets take an input from user what category he is looking for
+// let msg =""
+// for (let i=0; i<=categories.length; i++){
+//     msg = msg + categories[0][i] + ":" + categories[1][i]
+//     if (i != categories.length){
+//         msg = msg + ', '
+//     }
+// }
+// let category = await inquirer.prompt([{
+//     name: "cat",
+//     type: "number",
+//     message: "Enter what you want to buy? [" + msg + "]"}
+// ]);
+
+// let totalbill = 0
+// if (category.cat===1){
+//     console.log("Available Fruits with prices");
+//     for (let i=0; i<fruitsList.length; i++){
+//         console.log(i+1 + ':'+fruitsList[0][i] +' Price @ '+ fruitsList[1][i] + '/KG');
+//     }
+//     let product = await inquirer.prompt([{
+//         name: "pro",
+//         type: "number",
+//         message: "Enter serial number of the item you want to buy?"}
+//     ]);
+//     let rate:number = +fruitsList[1][product.pro-1]
+//     console.log("Rate = "+rate)
+//     if (product.pro <= fruitsList.length){
+//         let weight = await inquirer.prompt([{
+//             name: "kg",
+//             type: "number",
+//             message: "Enter serial number of kg you want to buy?"}
+//         ]);
+//         if (weight.kg>0){
+//             totalbill = rate * weight.kg
+//             if (totalbill > 1000){
+//                 totalbill = totalbill - totalbill* 0.1 
+//                 console.log("Congratulation! You got 10% discount")
+//             }
+//             else{
+//                 console.log("No discounts applicable")
+//             }
+//             console.log("Your total bill is: ", totalbill)
+//             for (let i=0; i<cardTypes.length; i++){
+//                 console.log(i+1 + ':'+cardTypes[i]);}
+//             let paymentMethod = await inquirer.prompt([{
+//                 name: "pay",
+//                 type: "number",
+//                 message: "Enter serial number of preferred payment method?"}
+//             ]);
+//             console.log("You choosed ",cardTypes[paymentMethod.pay-1])
+//             if (paymentMethod.pay==1){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//             else if(paymentMethod.pay==2){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//         }
+//         else{
+//             console.log("Wrong Entry")
+//         }
+//     }
+//     else{
+//         console.log("Wrong Entry")
+//     }
+// }
+
+// else if(category.cat===2){
+//     console.log("Available Vegetables with prices")
+//     for (let i=0; i<vegetablesList.length; i++){
+//         console.log(i+1 + ':'+vegetablesList[0][i] +' Price @ '+ vegetablesList[1][i] + '/KG');
+//     }
+//     let product = await inquirer.prompt([{
+//         name: "pro",
+//         type: "number",
+//         message: "Enter serial number of the item you want to buy?"}
+//     ]);
+//     let rate:number = +vegetablesList[1][product.pro-1]
+//     console.log("Rate = "+rate)
+//     if (product.pro <= vegetablesList.length){
+//         let weight = await inquirer.prompt([{
+//             name: "kg",
+//             type: "number",
+//             message: "Enter serial number of kg you want to buy?"}
+//         ]);
+//         if (weight.kg>0){
+//             totalbill = rate * weight.kg
+//             if (totalbill > 1000){
+//                 totalbill = totalbill - totalbill* 0.1 
+//                 console.log("Congratulation! You got 10% discount")
+//             }
+//             else{
+//                 console.log("No discounts applicable")
+//             }
+//             console.log("Your total bill is: ", totalbill)
+//             for (let i=0; i<cardTypes.length; i++){
+//                 console.log(i+1 + ':'+cardTypes[i]);}
+//             let paymentMethod = await inquirer.prompt([{
+//                 name: "pay",
+//                 type: "number",
+//                 message: "Enter serial number of preferred payment method?"}
+//             ]);
+//             console.log("You choosed ",cardTypes[paymentMethod.pay-1])
+//             if (paymentMethod.pay==1){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//             else if(paymentMethod.pay==2){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//         }
+//         else{
+//             console.log("Wrong Entry")
+//         }
+//     }
+//     else{
+//         console.log("Wrong Entry")
+//     }
+// }
+// else if(category.cat===3){
+//     console.log("Available Groceries with prices")
+//     for (let i=0; i<groceriesList.length; i++){
+//         console.log(i+1 + ':'+groceriesList[0][i] +' Price @ '+ groceriesList[1][i] + '/KG');
+//     }
+//     let product = await inquirer.prompt([{
+//         name: "pro",
+//         type: "number",
+//         message: "Enter serial number of the item you want to buy?"}
+//     ]);
+//     let rate:number = +groceriesList[1][product.pro-1]
+//     console.log("Rate = "+rate)
+//     if (product.pro <= groceriesList.length){
+//         let weight = await inquirer.prompt([{
+//             name: "kg",
+//             type: "number",
+//             message: "Enter serial number of kg you want to buy?"}
+//         ]);
+//         if (weight.kg>0){
+//             totalbill = rate * weight.kg
+//             if (totalbill > 1000){
+//                 totalbill = totalbill - totalbill* 0.1 
+//                 console.log("Congratulation! You got 10% discount")
+//             }
+//             else{
+//                 console.log("No discounts applicable")
+//             }
+//             console.log("Your total bill is: ", totalbill)
+//             for (let i=0; i<cardTypes.length; i++){
+//                 console.log(i+1 + ':'+cardTypes[i]);}
+//             let paymentMethod = await inquirer.prompt([{
+//                 name: "pay",
+//                 type: "number",
+//                 message: "Enter serial number of preferred payment method?"}
+//             ]);
+//             console.log("You choosed ",cardTypes[paymentMethod.pay-1])
+//             if (paymentMethod.pay==1){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//             else if(paymentMethod.pay==2){
+//                 let accountNumber = await inquirer.prompt([{
+//                     name: "acc",
+//                     type: "number",
+//                     message: "Enter your account number?"}
+//                 ]);
+//                 let oneTimePassword = await inquirer.prompt([{
+//                     name: "otp",
+//                     type: "number",
+//                     message: "Enter your otp number?"}
+//                 ]);
+//                 console.log("Transaction Successfull")
+//             }
+//         }
+//         else{
+//             console.log("Wrong Entry")
+//         }
+//     }
+//     else{
+//         console.log("Wrong Entry")
+//     }
+// }
+// else{
+//     console.log("Wrong entry!")
+// }
+
+
+//                                            Task Two
+
+// function add(x:number, y:number):number{
+//     return x+y
+// }
+// let z = add(15,3)
+// console.log("add() returned: ",z)
+
+// function checkEvenOrOdd(x:number){
+//     x = Math.floor(x)
+//     if (x % 2 === 0){
+//         return 'Even'
+//     }
+//     else{
+//         return 'Odd'
+//     }
+// }
+// let z = checkEvenOrOdd(14.5)
+// console.log("checkEvenOrOdd() returned: ",z)
+
+// function calculateArea(h:number, w:number):number{
+//     return h*w
+// }
+
+// let z = calculateArea(14,13)
+// console.log("calculateArea() returned: ",z)
+
+// function reverseString(x:String):string{
+//     let reverseString = "";
+//     for (let char of x) {
+//     reverseString = char + reverseString;
+//     }
+//     return reverseString
+// }
+// let z = reverseString("String to reverse!")
+// console.log("reverseString() returned: ",z)
+
+// function convertCelsiusToFahrenheit(c:number):number{
+//     return (c * 9/5) + 32
+// }
+// let z = convertCelsiusToFahrenheit(32.1)
+// console.log("convertCelsiusToFahrenheit() returned: ",z)
+
+let products = ["apple", "mango"]
+products.push("banana")
+products.push("oranges")
+console.log(products)
+// added two items to products    
+// [ 'apple', 'mango', 'banana', 'oranges' ]
+products.pop()
+console.log(products)
+// item is removed from products
+// [ 'apple', 'mango', 'banana' ]
+products.shift()
+console.log(products)
+// first item removed
+// [ 'mango', 'banana' ]
+products.unshift('apple')
+console.log(products)
+// item inserted at index 0
+// [ 'apple', 'mango', 'banana' ]
+products.splice(0, 1)
+console.log(products)
+// removed one item from index 0
+// [ 'mango', 'banana' ]
+products = ['apple', 'mango', 'banana', 'oranges']
+let newproductslist = products.slice(1)
+console.log(newproductslist)
+// created new list starting from index one
